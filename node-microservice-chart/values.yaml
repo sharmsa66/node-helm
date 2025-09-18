@@ -1,0 +1,16 @@
+# node-microservice-chart/values.yaml
+replicaCount: 1
+
+image:
+  repository: node-microservice
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "1.0.0"
+
+service:
+  type: LoadBalancer # Use LoadBalancer for local testing on Minikube, or NodePort.
+  port: 80
+  targetPort: 3000
+
+ingress:
+  enabled: false
